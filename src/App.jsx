@@ -8,12 +8,7 @@ function App() {
       <NavBar />
       <main className='main-section'>
         <div className='container grid'>
-          <ItemListContainer imgSrc="assets/kettlebelts.jpg" />
-          <ItemListContainer imgSrc="assets/kettlebelts.jpg" />
-          <ItemListContainer imgSrc="assets/kettlebelts.jpg" />
-          <ItemListContainer imgSrc="./assets/kettlebelts.jpg" />
-          <ItemListContainer imgSrc="./assets/kettlebelts.jpg" />
-          <ItemListContainer imgSrc="./assets/kettlebelts.jpg" />
+          <ItemListContainer greeting="Bienvenidos!" />
         </div>
 
       </main>

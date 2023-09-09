@@ -1,13 +1,8 @@
 import "./ItemListContainer.css";
 
-function ItemListContainer({ imgSrc }) {
+function ItemListContainer({ greeting }) {
     return <div className="item-list-container">
-        <img src={imgSrc} />
-        <div className="item-list-container-text-div">
-            <h1 className="item-list-container-h1">Texto</h1>
-            <p className="item-list-container-p">lorem lorem lorem lorem lorem</p>
-        </div>
-
+        <h2 className="item-list-h2">{greeting}</h2>
     </div>
 }
 

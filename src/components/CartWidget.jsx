@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BsCart3 } from "react-icons/bs";
+import './CartWidget.css';
 
 function CartWidget() {
     const [itemsOnCart, setItemsOnCart] = useState(0);

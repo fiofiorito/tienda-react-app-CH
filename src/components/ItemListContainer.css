@@ -2,16 +2,17 @@
     width: fit-content;
     border: 1px solid #212529;
     justify-content: space-between;
+    padding: 0.75rem 2rem;
 }
 
-.item-list-container-h1 {
-    font-style: italic;
-}
+/* .item-list-container-h1 {
+    
+} */
 
-.item-list-container-p {
-    color: blue;
-}
+/* .item-list-container-p {
+   
+} */
 
-.item-list-container-text-div {
+/* .item-list-container-text-div {
     border-top: 1px solid #212529;
-}
+} */
