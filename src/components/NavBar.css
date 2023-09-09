@@ -56,9 +56,11 @@
     border-radius: 100px;
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 900px) {
     .hamburger {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: flex-end; */
         cursor: pointer;
     }
 
@@ -81,14 +83,14 @@
         overflow: hidden;
     }
 
-    .nav-bar.active {
-        height: 20em;
+    .nav-bar.visible {
+        height: 15em;
         border-bottom: 1px solid;
         width: 100vw;
         margin: 0 auto;
     }
 
-    .nav-bar.active .nav-bar-list {
+    .nav-bar.visible .nav-bar-list {
         opacity: 1;
     }
 
@@ -103,6 +105,14 @@
 
     .nav-bar-link {
         margin-bottom: 0.5em;
+    }
+
+    .hidden {
+        display: hidden;
+    }
+
+    .visible {
+        display: inherit;
     }
 
 
