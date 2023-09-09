@@ -1,0 +1,17 @@
+.item-list-container {
+    width: fit-content;
+    border: 1px solid #212529;
+    justify-content: space-between;
+}
+
+.item-list-container-h1 {
+    font-style: italic;
+}
+
+.item-list-container-p {
+    color: blue;
+}
+
+.item-list-container-text-div {
+    border-top: 1px solid #212529;
+}

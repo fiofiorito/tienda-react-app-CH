@@ -1,3 +1,16 @@
-p {
-  font-size: 3rem;
+.main-section {
+    padding: 3rem 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    row-gap: 2rem;
 }
