@@ -1,5 +1,5 @@
 import './App.css';
-import ItemListContainer from './components/ItemListContainer';
+import ItemListContainer from './components/ItemList/ItemListContainer';
 import NavBar from './components/NavBar';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
       <NavBar />
       <main className='main-section'>
         <div className='container grid'>
-          <ItemListContainer greeting="Bienvenidos!" />
+          <ItemListContainer />
         </div>
 
       </main>
