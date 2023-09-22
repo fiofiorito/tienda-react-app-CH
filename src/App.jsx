@@ -7,7 +7,7 @@ function App() {
     <>
       <NavBar />
       <main className='main-section'>
-        <div className='container grid'>
+        <div className='container'>
           <ItemListContainer />
         </div>
 

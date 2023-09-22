@@ -1,10 +1,11 @@
+import { useEffect, useState } from "react";
+import Items from "./Items";
 
-const ItemList = ({ product }) => {
-    return <div className="item-list-container">
-        <h2>{product.name}</h2>
-        <img src={product.img} alt="" />
-        <p>{product.stock}</p>
-        <p>$ {product.price}</p>
+const ItemList = ({ items }) => {
+    return <div className="grid">
+        {items.map((item) => {
+            return <Items key={item.id} item={item} />
+        })}
     </div>
 }
 

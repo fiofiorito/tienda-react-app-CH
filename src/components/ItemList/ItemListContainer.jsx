@@ -2,37 +2,26 @@ import React from "react";
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import "./ItemListContainer.css";
-import { products, getProduct } from "./Items";
+import useFetch from "../../hooks/useFetch";
 
 const ItemListContainer = () => {
-    const [items, setItems] = useState([]);
-    const [loadProducts, setLoadProducts] = useState(true);
-    const [err, setErr] = useState("");
+    const [items] = useFetch("https://fakestoreapi.com/products");
+    // useEffect(() => {
+    //     setLoading(true)
+    //     setTimeout(() => {
+    //         setProducts([items])
+    //         setLoading(false)
+    //         console.log(products, loading)
+    //     }, 5000)
+    // }, []);
+    // AGREGAR UN HOC PARA HACER EL LOADING DE LOS PRODUCTOS!!!
 
-    /* evita un bucle infinito de actualizacion de items, tiene q setearlos dentro
-    del useState una sola vez */
-    useEffect(() => {
-        getProduct()
-            .then((response) => {
-                setItems(response)
-            })
-            .catch((error) => {
-                setErr(error)
-            })
-            .finally(() => {
-                setLoadProducts(false)
-            })
-    }, []);
-    console.log(items);
-
-    return <>
-        {loadProducts && <p>Cargando productos...</p>}
-        {err && <p>{err}</p>}
-        {items.map((item) => (
-            <ItemList product={item} key={item.id} />
-        ))}
-
-    </>
+    return <div>
+        {
+            items !== null &&
+            <ItemList items={items} />
+        }
+    </div>
 
 }
 

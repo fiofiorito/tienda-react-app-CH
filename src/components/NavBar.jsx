@@ -23,7 +23,7 @@ function NavBar() {
 
     return <>
         <div className="header-container">
-            <div className="logo">iFit Gym</div>
+            <div className="logo">iFio</div>
             <div className="hamburger" onClick={updateMenu}>
                 <div className={hamburgerLine}></div>
                 <div className={hamburgerLine}></div>
