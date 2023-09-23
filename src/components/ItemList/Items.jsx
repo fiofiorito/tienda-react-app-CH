@@ -8,8 +8,8 @@ const Items = ({ item }) => {
         <img className="items-img" src={item.image} alt="" />
         <h2 className="items-h2">{item.title}</h2>
         <p className="items-p">{smItemDesc}, <a href="#" className="items-p-link">Ver más...</a></p>
-        <button className="items-btn">Ver detalles</button>
         <Counter />
+        {/* AGREGAR EL BOTON DE AGREGAR AL CARRITO */}
     </div>
 }
 

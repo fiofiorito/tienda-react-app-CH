@@ -1,32 +1,32 @@
 /* FONTS
-font-family: 'Cormorant Garamond', serif;
+font-family: 'Merriweather Sans', sans-serif;
 font-family: 'Raleway', sans-serif; */
 
 /* COLORS
-#E1E1DA light beige
-#212529 off black 
-#F3F3F2 off white
-#B1AE9B beige
-#9A9784 shadow beige
+#F3FFFC bg color - "white"
+#F1F9F6 card component
+#B9DFD1 card shadow color
+#0D1C1A font color - "black"
+#3BC5B1 font color - "turquoise"
+#26CFC6 font accent color
+#3DA087 accent color shadow
 */
 
 body {
-  background-color: #E1E1DA;
+  background-color: #f7fcfb;
   font-family: 'Raleway', sans-serif;
-  color: #212529;
-  margin: 0.5em 0.25em;
-  border: 1px solid #212529;
+  color: #0D1C1A;
+  margin: 0;
 }
 
 .solid-line {
   height: 1px;
-  border-bottom: 1px solid #212529;
 }
 
 h1,
 h2,
 h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 h1 {

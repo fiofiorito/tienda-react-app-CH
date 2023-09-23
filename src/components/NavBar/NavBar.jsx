@@ -1,6 +1,7 @@
 import { useState } from "react";
-import CartWidget from "./CartWidget";
+
 import "./NavBar.css"
+import CartWidget from "./CartWidget/CartWidget";
 
 function NavBar() {
     // change className --> toggle navbar

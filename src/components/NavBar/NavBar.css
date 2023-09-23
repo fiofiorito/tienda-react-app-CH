@@ -1,16 +1,14 @@
 /* navbar container */
 .header-container {
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
-    background-color: #E1E1DA;
-    /* width: 100%; */
+    background-color: #F3FFFC;
+    box-shadow: 0 0 10px #B9DFD1;
     height: 5em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 0 2em; */
-    font-family: 'Cormorant Garamond', serif;
-    /* border-bottom: 1px solid #212529; */
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 /* nav bar collapsed */
@@ -26,7 +24,7 @@
 
 .nav-bar-link {
     display: block;
-    color: #212529;
+    color: #0D1C1A;
     text-decoration: none;
     text-transform: uppercase;
     transition: 0.2s;
@@ -36,7 +34,6 @@
 
 .nav-bar-cart-widget-link {
     font-size: 1rem;
-    /* color: #212529; */
 }
 
 .nav-bar-item {
@@ -51,8 +48,8 @@
 
 .nav-bar-link:hover,
 .nav-bar-link:focus {
-    background-color: #B1AE9B;
-    color: #F3F3F2;
+    background-color: #3BC5B1;
+    color: #f7fcfb;
     border-radius: 100px;
 }
 
@@ -60,14 +57,13 @@
     .hamburger {
         display: flex;
         flex-direction: column;
-        /* justify-content: flex-end; */
         cursor: pointer;
     }
 
     .hamburger .line {
         width: 1.5em;
         height: 1px;
-        background-color: #212529;
+        background-color: #0D1C1A;
         margin: 4px 0;
     }
 
@@ -78,14 +74,13 @@
         right: 0;
         width: 100vw;
         height: 0em;
-        background-color: #E1E1DA;
+        background-color: #f7fcfb;
         transition: 0.5s;
         overflow: hidden;
     }
 
     .nav-bar.visible {
         height: 15em;
-        border-bottom: 1px solid;
         width: 100vw;
         margin: 0 auto;
     }
@@ -105,6 +100,7 @@
 
     .nav-bar-link {
         margin-bottom: 0.5em;
+        padding: 0.6em 0.9em;
     }
 
     .hidden {
@@ -113,6 +109,8 @@
 
     .visible {
         display: inherit;
+        background-color: #F3FFFC;
+        box-shadow: 0 2px 10px -6px #B9DFD1;
     }
 
 
@@ -120,7 +118,8 @@
 
 .logo {
     font-size: 1.75rem;
-    font-weight: 300;
-    font-style: italic;
+    font-weight: 900;
     letter-spacing: 0.18rem;
+    color: #3BC5B1;
+    padding-left: 5%;
 }

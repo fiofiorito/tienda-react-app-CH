@@ -3,9 +3,19 @@
     grid-template-columns: repeat(10, 1fr);
     align-items: center;
     justify-content: space-evenly;
-    /* gap: 1rem; */
-    border: 1px solid #212529;
+    border: 1px solid #26CFC6;
+    border-radius: 8px;
     margin: 0.5rem;
+}
+
+.counter-btn1,
+.counter-btn2 {
+    font-family: 'Merriweather Sans', sans-serif;
+    background-color: transparent;
+    padding: 0.75em 1.2em;
+    color: #0D1C1A;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
 
 .counter-btn1 {
@@ -32,6 +42,6 @@
     text-align: center;
     margin: 0;
     padding: 1rem 0;
-    border-left: 1px solid #212529;
-    border-right: 1px solid #212529;
+    border-left: 1px solid #26CFC6;
+    border-right: 1px solid #26CFC6;
 }

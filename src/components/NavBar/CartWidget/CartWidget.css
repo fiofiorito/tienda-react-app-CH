@@ -1,0 +1,9 @@
+.cart-widget span {
+    font-family: 'Raleway', sans-serif;
+}
+
+.cart-widget {
+    padding-right: 5%;
+    display: flex;
+    gap: 3px;
+}
