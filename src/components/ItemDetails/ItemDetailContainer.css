@@ -71,6 +71,10 @@
         width: 18rem;
     }
 
+    .detail-h2 {
+        margin-top: 0;
+    }
+
     .detail-div-child {
         display: grid;
     }
@@ -83,8 +87,9 @@
     }
 
     .detail-price-counter {
-        flex-direction: row;
-        gap: 1rem;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        align-items: center;
     }
 }
 
@@ -99,6 +104,9 @@
     }
 
     .detail-price-counter {
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+        align-items: center;
         justify-content: left;
     }
 }

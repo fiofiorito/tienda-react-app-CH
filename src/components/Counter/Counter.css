@@ -45,3 +45,21 @@
     border-left: 1px solid #26CFC6;
     border-right: 1px solid #26CFC6;
 }
+
+/* add to cart btn */
+.add-to-cart-div {
+    display: flex;
+    justify-content: center;
+}
+
+.add-to-cart-btn {
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 3px 15px #B9DFD1;
+    background-color: #3BC5B1;
+    color: #F3FFFC;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+    margin: 0.5rem 0;
+}

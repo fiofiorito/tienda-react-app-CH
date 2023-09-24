@@ -2,9 +2,9 @@
 import { useState } from "react";
 // styles
 import "./Counter.css"
+import AddToCart from "./AddToCart";
 
 const Counter = () => {
-    // AGREGAR EL BOTON DE AGREGAR AL CARRITO
     const [count, setCount] = useState(0)
     const stock = 50;
 
@@ -23,11 +23,16 @@ const Counter = () => {
             setCount(0)
         }
     }
-    return <div className="counter-div">
-        <button className="counter-btn1" onClick={onSubtract}>-</button>
-        <p className="counter-p">{count}</p>
-        <button className="counter-btn2" onClick={onAdd}>+</button>
-    </div>
+
+    return <>
+        <div className="counter-div">
+            <button className="counter-btn1" onClick={onSubtract}>-</button>
+            <p className="counter-p">{count}</p>
+            <button className="counter-btn2" onClick={onAdd}>+</button>
+        </div>
+        <AddToCart />
+    </>
+
 }
 
 export default Counter;
