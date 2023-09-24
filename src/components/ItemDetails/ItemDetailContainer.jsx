@@ -1,15 +1,15 @@
+// hooks
 import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
+// components
 import ItemDetail from "./ItemDetail";
+// routing
+import { useParams } from "react-router";
 
 const ItemDetailContainer = () => {
-    const [item, setItem] = useState({});
-    const page = 2;
-    const [items] = useFetch(`https://fakestoreapi.com/products/${page}`);
+    const { id } = useParams();
+    const [item] = useFetch(`https://fakestoreapi.com/products/${id}`);
 
-    useEffect(() => {
-        setItem(items)
-    }, [items]);
 
     return <div className="detail-div">
         {

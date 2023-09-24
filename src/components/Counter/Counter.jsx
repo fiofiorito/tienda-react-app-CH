@@ -1,7 +1,9 @@
+// hooks
 import { useState } from "react";
+// styles
 import "./Counter.css"
+
 const Counter = () => {
-    // TRANSFORMAR EN CUSTOM HOOK!!!
     // AGREGAR EL BOTON DE AGREGAR AL CARRITO
     const [count, setCount] = useState(0)
     const stock = 50;

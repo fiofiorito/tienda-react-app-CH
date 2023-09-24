@@ -1,8 +1,10 @@
-import React from "react";
+// hooks 
 import { useState, useEffect } from "react";
+import useFetch from "../../hooks/useFetch";
+// components & style
 import ItemList from "./ItemList";
 import "./ItemListContainer.css";
-import useFetch from "../../hooks/useFetch";
+
 
 const ItemListContainer = () => {
     const [items] = useFetch("https://fakestoreapi.com/products");

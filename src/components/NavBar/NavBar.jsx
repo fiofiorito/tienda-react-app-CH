@@ -1,7 +1,11 @@
+// hooks
 import { useState } from "react";
-
+// styles
 import "./NavBar.css"
+// components
 import CartWidget from "./CartWidget/CartWidget";
+// routing
+import { Link } from "react-router-dom";
 
 function NavBar() {
     // change className --> toggle navbar
@@ -24,7 +28,7 @@ function NavBar() {
 
     return <>
         <div className="header-container">
-            <div className="logo">iFio</div>
+            <div className="logo"><Link to="/">iFio</Link></div>
             <div className="hamburger" onClick={updateMenu}>
                 <div className={hamburgerLine}></div>
                 <div className={hamburgerLine}></div>
@@ -33,20 +37,17 @@ function NavBar() {
             <nav className={navBar}>
                 <ul className="nav-bar-list">
                     <li className="nav-bar-item">
-                        <a className="nav-bar-link" href="#">Inicio</a>
+                        <Link className="nav-bar-link" to="/">Inicio</Link>
                     </li>
                     <li className="nav-bar-item">
-                        <a className="nav-bar-link" href="#">Promociones</a>
+                        <Link className="nav-bar-link" to="/category/:categoryId">Categorias</Link>
                     </li>
                     <li className="nav-bar-item">
-                        <a className="nav-bar-link" href="#">Servicios</a>
-                    </li>
-                    <li className="nav-bar-item">
-                        <a className="nav-bar-link" href="#">Soporte</a>
+                        <Link className="nav-bar-link" to="/category/:categoryId">Soporte</Link>
                     </li>
                 </ul>
             </nav>
-            <a className="nav-bar-link nav-bar-cart-widget-link" href="#"><CartWidget /></a>
+            <Link className="nav-bar-link nav-bar-cart-widget-link" to="/category/:categoryId"><CartWidget /></Link>
         </div>
         <div className="solid-line"></div>
     </>

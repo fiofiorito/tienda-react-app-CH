@@ -116,10 +116,11 @@
 
 }
 
-.logo {
+.logo a {
     font-size: 1.75rem;
     font-weight: 900;
     letter-spacing: 0.18rem;
     color: #3BC5B1;
-    padding-left: 5%;
+    padding-left: 4rem;
+    text-decoration: none;
 }
