@@ -27,7 +27,8 @@
 
 .detail-p-div div {
     display: inherit;
-    gap: inherit;
+    justify-content: inherit;
+    gap: 0.5rem;
     border-top: 1px solid #B9DFD1;
     border-bottom: 1px solid #B9DFD1;
 }

@@ -2,6 +2,7 @@ import Counter from '../Counter/Counter';
 import './ItemDetailContainer.css';
 
 const ItemDetail = ({ item }) => {
+
     return <>
         <div className='detail-div-child'>
             <img className="detail-img" src={item.image} />
@@ -12,7 +13,7 @@ const ItemDetail = ({ item }) => {
             <div className="detail-p-div">
                 <div>
                     <p className="detail-p">{item.category}</p>
-                    <p className="detail-p">Rate: {item.rating.rate} ⭐</p>
+                    <p className="detail-p">Rate: ⭐</p>
                 </div>
             </div>
             <div className='detail-price-counter'>
