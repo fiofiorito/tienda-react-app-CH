@@ -16,7 +16,6 @@ function NavBar() {
         if (!isMenuClicked) {
             setHamburgerLine("line clicked");
             setNavBar("nav-bar visible");
-            console.log(hamburgerLine, navBar);
         } else {
             setHamburgerLine("line unclicked");
             setNavBar("nav-bar hidden");
@@ -37,13 +36,13 @@ function NavBar() {
             <nav className={navBar}>
                 <ul className="nav-bar-list">
                     <li className="nav-bar-item">
-                        <Link className="nav-bar-link" to="/">Inicio</Link>
+                        <Link onClick={updateMenu} className="nav-bar-link" to="/">Inicio</Link>
                     </li>
                     <li className="nav-bar-item">
-                        <Link className="nav-bar-link" to="/category/:categoryId">Categorias</Link>
+                        <Link onClick={updateMenu} className="nav-bar-link" to="/category/:categoryId">Categorias</Link>
                     </li>
                     <li className="nav-bar-item">
-                        <Link className="nav-bar-link" to="/category/:categoryId">Soporte</Link>
+                        <Link onClick={updateMenu} className="nav-bar-link" to="/category/:categoryId">Soporte</Link>
                     </li>
                 </ul>
             </nav>

@@ -12,7 +12,6 @@ const Items = ({ item }) => {
         <h2 className="items-h2">{item.title}</h2>
         <p className="items-p">{smItemDesc}, <Link to={`/item/${item.id}`} className="items-p-link">Ver más...</Link></p>
         <Counter />
-        {/* AGREGAR EL BOTON DE AGREGAR AL CARRITO */}
     </div>
 }
 

@@ -77,6 +77,7 @@
         background-color: #f7fcfb;
         transition: 0.5s;
         overflow: hidden;
+        z-index: 999;
     }
 
     .nav-bar.visible {

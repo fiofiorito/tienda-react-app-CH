@@ -1,0 +1,12 @@
+footer {
+    padding: 1.25rem;
+    background-color: #F3FFFC;
+    box-shadow: 0 0 5px #B9DFD1;
+}
+
+.footer-div {
+    display: flex;
+    justify-content: center;
+    color: #3BC5B1;
+    font-size: 0.75rem;
+}
