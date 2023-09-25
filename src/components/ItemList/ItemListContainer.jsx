@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import ItemList from "./ItemList";
 import "./ItemListContainer.css";
 import Loader from "../Loader";
+import Error from "../Error/Error";
 // routing
 import { useParams } from "react-router";
 
@@ -13,19 +14,6 @@ const ItemListContainer = () => {
     const URL = categoryId ? `https://fakestoreapi.com/products/category/${categoryId}` : "https://fakestoreapi.com/products";
     const [items] = useFetch(URL);
 
-    console.log(categoryId);
-    const updateData = () => {
-        if (categoryId == undefined) {
-            useFetch("https://fakestoreapi.com/products");
-            console.log(categoryId)
-        } else {
-            console.log(categoryId)
-        }
-    }
-    useEffect(() => {
-        updateData()
-    }, [URL]);
-
     if (items == null) {
         return <Loader />
     } else if (items !== null) {
@@ -33,6 +21,8 @@ const ItemListContainer = () => {
             <ItemList items={items} />
 
         </div>
+    } else {
+        return <Error />
     }
 }
 
