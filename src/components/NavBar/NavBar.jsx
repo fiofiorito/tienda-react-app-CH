@@ -39,14 +39,23 @@ function NavBar() {
                         <Link onClick={updateMenu} className="nav-bar-link" to="/">Inicio</Link>
                     </li>
                     <li className="nav-bar-item">
-                        <Link onClick={updateMenu} className="nav-bar-link" to="/category/:categoryId">Categorias</Link>
+                        <Link onClick={updateMenu} className="nav-bar-link" to="/category/hombres">Hombres</Link>
                     </li>
                     <li className="nav-bar-item">
-                        <Link onClick={updateMenu} className="nav-bar-link" to="/category/:categoryId">Soporte</Link>
+                        <Link onClick={updateMenu} className="nav-bar-link" to="/category/mujeres">Mujeres</Link>
+                    </li>
+                    <li className="nav-bar-item">
+                        <Link onClick={updateMenu} className="nav-bar-link" to="/category/joyitas">Joyitas</Link>
+                    </li>
+                    <li className="nav-bar-item">
+                        <Link onClick={updateMenu} className="nav-bar-link" to="/category/electronicos">Electrónicos</Link>
+                    </li>
+                    <li className="nav-bar-item">
+                        <Link onClick={updateMenu} className="nav-bar-link" to="/soporte">Soporte</Link>
                     </li>
                 </ul>
             </nav>
-            <Link className="nav-bar-link nav-bar-cart-widget-link" to="/category/:categoryId"><CartWidget /></Link>
+            <Link className="nav-bar-link nav-bar-cart-widget-link" to="/carrito"><CartWidget /></Link>
         </div>
         <div className="solid-line"></div>
     </>
