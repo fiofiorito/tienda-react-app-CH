@@ -1,5 +1,17 @@
 .error-div {
-    border: 1px solid red;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+}
+
+.error-svg {
+    color: #3BC5B1;
+    font-size: 5rem;
+}
+
+.error-p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
 }

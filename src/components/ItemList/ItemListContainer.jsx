@@ -1,69 +1,39 @@
 // hooks 
-import { useState, useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
+import { useEffect } from "react";
 // components & style
 import ItemList from "./ItemList";
 import "./ItemListContainer.css";
 import Loader from "../Loader";
+// routing
 import { useParams } from "react-router";
-import Error from "../Error/Error";
-
-
-
 
 const ItemListContainer = () => {
-    const [items] = useFetch("https://fakestoreapi.com/products");
-
-    const [products, setProducts] = useState(null);
-    const [err, setErr] = useState("")
-    const [loading, setLoading] = useState(true);
-
     const categoryId = useParams().categoryId;
-    // console.log(categoryId)
+    const URL = categoryId ? `https://fakestoreapi.com/products/category/${categoryId}` : "https://fakestoreapi.com/products";
+    const [items] = useFetch(URL);
 
-    const getProducts = () => new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (items !== null) {
-                resolve(items)
-            } else {
-                reject("Ups, algo salió mal");
-            }
-        }, 3000);
-    });
-
-    useEffect(() => {
-        getProducts()
-            .then((response) => {
-                if (items) {
-                    setProducts(response);
-                }
-            })
-            .catch((err) => {
-                setErr(err);
-            })
-            .finally(() => {
-                setLoading(false);
-            })
-
-    }, []);
-
-
-    return <div>
-        {loading && <Loader />}
-        {
-            products !== null &&
-            <ItemList items={products} />
+    console.log(categoryId);
+    const updateData = () => {
+        if (categoryId == undefined) {
+            useFetch("https://fakestoreapi.com/products");
+            console.log(categoryId)
+        } else {
+            console.log(categoryId)
         }
-        {err && <Error />}
-    </div>
-    // if (products == null) {
-    //     return <Loader />
-    // } else if (products !== null) {
-    //     return <div className="slide-from-bottom">
-    //         <ItemList items={products} />
+    }
+    useEffect(() => {
+        updateData()
+    }, [URL]);
 
-    //     </div>
-    // }
+    if (items == null) {
+        return <Loader />
+    } else if (items !== null) {
+        return <div className="slide-from-bottom">
+            <ItemList items={items} />
+
+        </div>
+    }
 }
 
 export default ItemListContainer;

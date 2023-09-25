@@ -39,16 +39,7 @@ function NavBar() {
                         <Link onClick={updateMenu} className="nav-bar-link" to="/">Inicio</Link>
                     </li>
                     <li className="nav-bar-item">
-                        <Link onClick={updateMenu} className="nav-bar-link" to="/category/hombres">Hombres</Link>
-                    </li>
-                    <li className="nav-bar-item">
-                        <Link onClick={updateMenu} className="nav-bar-link" to="/category/mujeres">Mujeres</Link>
-                    </li>
-                    <li className="nav-bar-item">
-                        <Link onClick={updateMenu} className="nav-bar-link" to="/category/joyitas">Joyitas</Link>
-                    </li>
-                    <li className="nav-bar-item">
-                        <Link onClick={updateMenu} className="nav-bar-link" to="/category/electronicos">Electrónicos</Link>
+                        <Link onClick={updateMenu} className="nav-bar-link" to="/category">Productos</Link>
                     </li>
                     <li className="nav-bar-item">
                         <Link onClick={updateMenu} className="nav-bar-link" to="/soporte">Soporte</Link>

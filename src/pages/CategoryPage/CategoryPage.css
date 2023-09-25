@@ -1,0 +1,28 @@
+.category-div-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 2rem;
+}
+
+@media (min-width: 700px) {
+
+    .category-div-nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+}
+
+@media (min-width: 900px) {
+
+    .category-div-nav ul {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+}
