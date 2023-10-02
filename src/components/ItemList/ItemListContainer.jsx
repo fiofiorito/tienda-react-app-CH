@@ -1,6 +1,5 @@
 // hooks 
 import useFetch from "../../hooks/useFetch";
-import { useEffect } from "react";
 // components & style
 import ItemList from "./ItemList";
 import "./ItemListContainer.css";

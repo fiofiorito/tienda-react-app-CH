@@ -34,12 +34,26 @@
     margin: 0 auto;
 }
 
-.items-h2 {
+.items-h2,
+.items-h2 a {
     font-size: 1.35rem;
     font-weight: 700;
     color: #36AB97;
     text-transform: none;
-    /* font-style: italic; */
+    text-decoration: none;
+}
+
+.items-h3,
+.items-h3 a {
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 600;
+    text-decoration: none;
+    color: #0D1C1A;
+}
+
+.items-h3 a span {
+    letter-spacing: -1px;
 }
 
 .items-p {

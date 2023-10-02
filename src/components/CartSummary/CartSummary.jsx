@@ -1,0 +1,29 @@
+import { useContext } from 'react';
+import CartContext from '../../context/CartContext/CartContext';
+
+const CartSummary = () => {
+    const { cart } = useContext(CartContext);
+
+    return <div>
+        {/* <p>No tenes nada en tu cart</p> */}
+        <div className="cart-summ-grid-div">
+            {
+                cart.map(el => {
+                    return <div className='cart-summ-items-div' key={el.item.id}>
+                        <div className='cart-summ-items-div-child'>
+                            <img className='cart-summ-items-img' src={el.item.image} />
+                            <div className='cart-summ-items-div-child-txt'>
+                                <h4 className='cart-summ-items-h4'>{el.item.title}</h4>
+                                <p>Cantidad: {el.quantity}</p>
+                                <p>Total: {el.item.price * el.quantity}</p>
+                            </div>
+                        </div>
+                    </div>
+                })
+            }
+        </div>
+
+    </div>
+}
+
+export default CartSummary;

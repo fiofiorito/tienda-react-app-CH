@@ -1,0 +1,44 @@
+.cart-summ-page-h3 {
+    font-size: 1.75rem;
+}
+
+.cart-summ-grid-div {
+    /* border: 1px solid red; */
+    display: grid;
+    /* grid-template-columns: 1fr; */
+    gap: 1rem;
+}
+
+.cart-summ-items-div {
+    background-color: #F1F9F6;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px #B9DFD1;
+    /* border: 1px solid green; */
+    padding: 2rem 1rem;
+}
+
+.cart-summ-items-div-child {
+    display: flex;
+    align-items: flex-start;
+}
+
+.cart-summ-items-div-child-txt {
+    padding: 0 1.5rem;
+}
+
+.cart-summ-items-img {
+    margin: 1rem 0;
+    width: 5rem;
+    object-fit: contain;
+}
+
+.cart-summ-items-h4 {
+    margin: 1rem 0;
+    color: #3CC5B1;
+}
+
+@media (min-width: 700px) {
+    .cart-summ-items-img {
+        width: 8rem;
+    }
+}

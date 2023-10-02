@@ -1,7 +1,7 @@
 import Counter from '../Counter/Counter';
 import './ItemDetailContainer.css';
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item, onAdd }) => {
 
     return <>
         <div className='detail-div-child'>
@@ -18,7 +18,7 @@ const ItemDetail = ({ item }) => {
             </div>
             <div className='detail-price-counter'>
                 <h3 className="detail-h3">U${item.price}</h3>
-                <Counter />
+                <Counter onAdd={onAdd} />
             </div>
         </div>
     </>

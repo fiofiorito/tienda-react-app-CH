@@ -4,11 +4,11 @@ import { useState } from "react";
 import "./Counter.css"
 import AddToCart from "./AddToCart";
 
-const Counter = () => {
+const Counter = ({ onAdd }) => {
     const [count, setCount] = useState(0)
     const stock = 50;
 
-    const onAdd = () => {
+    const onAddittion = () => {
         if (count === stock) {
             setCount(stock);
         } else {
@@ -28,9 +28,10 @@ const Counter = () => {
         <div className="counter-div">
             <button className="counter-btn1" onClick={onSubtract}>-</button>
             <p className="counter-p">{count}</p>
-            <button className="counter-btn2" onClick={onAdd}>+</button>
+            <button className="counter-btn2" onClick={onAddittion}>+</button>
         </div>
-        <AddToCart />
+
+        <AddToCart count={count} onAdd={onAdd} />
     </>
 
 }
