@@ -1,8 +1,10 @@
+// hooks
 import { useContext } from 'react';
+// components
 import CartContext from '../../context/CartContext/CartContext';
 
 const CartSummary = () => {
-    const { cart } = useContext(CartContext);
+    const { cart, removeItem } = useContext(CartContext);
 
     return <div>
         {/* <p>No tenes nada en tu cart</p> */}
@@ -18,6 +20,7 @@ const CartSummary = () => {
                                 <p>Total: {el.item.price * el.quantity}</p>
                             </div>
                         </div>
+                        <button className='cart-summ-delete-btn' onClick={() => { removeItem(el.item.id) }}>Borrar item</button>
                     </div>
                 })
             }

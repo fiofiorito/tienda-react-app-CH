@@ -46,7 +46,7 @@ function NavBar() {
                     </li>
                 </ul>
             </nav>
-            <Link className="nav-bar-link nav-bar-cart-widget-link" to="/carrito"><CartWidget /></Link>
+            <Link className="nav-bar-link nav-bar-cart-widget-link" to="/cart"><CartWidget /></Link>
         </div>
         <div className="solid-line"></div>
     </>

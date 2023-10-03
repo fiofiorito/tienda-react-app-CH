@@ -3,37 +3,51 @@ import CartContext from "./CartContext";
 
 const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState([])
-    // const [inCart, setInCart] = useState(false)
 
     console.log("esto es tu", cart)
-    const isInCart = (item, quantity) => {
-        // HACER EL FILTERING DE ITEMS IN CART PARA PODER EVITAR DUPLICADOS!
-        if (item.id) {
-            // setInCart(false)
+
+    const addItem = (item, quantity) => {
+        const id = item.id
+        if (!isInCart(id)) {
             setCart([
                 ...cart,
                 { item, quantity }
-            ]);
-            console.log("juega el if")
-        } else if (item.id == cart.item.id) {
-            // setInCart(true);
-            // setCart([
-            //     ...cart
-            // ])
-            console.log("ya esta en el carro")
+            ])
+        } else {
+            const updatedCart = cart.map((cartItem) => {
+                if (cartItem.item.id === id) {
+                    return {
+                        ...cartItem,
+                        quantity: cartItem.quantity + quantity
+                    };
+                }
+                return cartItem;
+            });
+            setCart(updatedCart);
         }
     }
-    const addItem = (item, quantity) => {
-        isInCart(item, quantity)
+
+    const isInCart = (id) => {
+        return cart.some(cartItem => cartItem.item.id === id)
     }
 
     const removeItem = (id) => {
-
+        const updatedCart = cart.filter(cartItem => cartItem.item.id !== id)
+        setCart(updatedCart);
     }
+
+    const clear = () => {
+        setCart([]);
+    }
+
+
+
     const valuesForValue = {
         cart,
         addItem,
-        removeItem
+        removeItem,
+        isInCart,
+        clear
     }
 
     return <CartContext.Provider value={valuesForValue}>

@@ -1,11 +1,9 @@
-// hooks
-import { useState } from "react";
-// styles
+// components & styles
 import "./Counter.css"
 import AddToCart from "./AddToCart";
 
-const Counter = ({ onAdd }) => {
-    const [count, setCount] = useState(0)
+const Counter = ({ onAdd, count, setCount, handleAdd }) => {
+    // const [count, setCount] = useState(0)
     const stock = 50;
 
     const onAddittion = () => {
@@ -14,7 +12,6 @@ const Counter = ({ onAdd }) => {
         } else {
             setCount(count + 1)
         }
-
     }
     const onSubtract = () => {
         if (count >= 1) {
@@ -31,7 +28,7 @@ const Counter = ({ onAdd }) => {
             <button className="counter-btn2" onClick={onAddittion}>+</button>
         </div>
 
-        <AddToCart count={count} onAdd={onAdd} />
+        <AddToCart count={count} onAdd={onAdd} handleAdd={handleAdd} />
     </>
 
 }

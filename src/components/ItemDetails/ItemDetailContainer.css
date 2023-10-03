@@ -123,8 +123,14 @@
 
     .detail-price-counter {
         display: grid;
-        grid-template-columns: 30% 40% 30%;
+        grid-template-columns: 30% 50% 20%;
         align-items: center;
         justify-content: left;
+    }
+}
+
+@media (min-width: 1100px) {
+    .detail-price-counter {
+        grid-template-columns: 30% 40% 30%;
     }
 }

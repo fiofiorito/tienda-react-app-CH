@@ -1,7 +1,10 @@
-const AddToCart = ({ count, onAdd }) => {
+const AddToCart = ({ count, onAdd, handleAdd }) => {
 
     return <div className="add-to-cart-div">
-        <button onClick={() => onAdd(count)} className="add-to-cart-btn">Agregar al carrito</button>
+        <button onClick={() => {
+            onAdd(count);
+            handleAdd(count);
+        }} className="add-to-cart-btn">Agregar al carrito</button>
     </div>
 
 }

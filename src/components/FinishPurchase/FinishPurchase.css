@@ -1,0 +1,33 @@
+.finish-purchase-div {
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.finish-purchase-btn {
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 3px 15px #B9DFD1;
+    background-color: #3BC5B1;
+    margin: 0.5rem 0;
+
+}
+
+.finish-purchase-btn>a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #F3FFFC;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+}
+
+.finish-purchase-p {
+    color: #0D1C1A;
+    font-size: 0.9rem;
+    margin: 0;
+    text-decoration: underline;
+}
