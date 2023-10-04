@@ -1,20 +1,25 @@
-// components & styles
+// hooks
 import { useContext } from "react";
-import CartSummary from "../../components/CartSummary/CartSummary";
-import '../../components/CartSummary/CartSummary.css';
+// components & styles
+import CartSummary from "../../components/Cart/CartSummary/CartSummary";
+import '../../components/Cart/CartSummary/CartSummary.css';
 import CartContext from "../../context/CartContext/CartContext";
+import EmptyCart from "../../components/Cart/EmptyCart/EmptyCart";
 
 const CartSummaryPage = () => {
-    const { clear } = useContext(CartContext);
+    const { clear, cart } = useContext(CartContext);
     const handleClear = () => {
         clear();
     }
+
     return <div>
         <div className="cart-summ-header">
             <h3 className="cart-summ-page-h3">Resumen de compra</h3>
             <button className="cart-summ-delete-btn" onClick={handleClear}>Borrar todo</button>
+            {console.log(cart)}
         </div>
-        <CartSummary />
+        {cart.length === 0 && <EmptyCart />}
+        {cart.length > 0 && <CartSummary />}
 
     </div>
 }
