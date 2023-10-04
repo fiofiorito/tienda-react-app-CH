@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CartContext from "./CartContext";
 
 const CartContextProvider = ({ children }) => {
@@ -39,8 +39,6 @@ const CartContextProvider = ({ children }) => {
     const clear = () => {
         setCart([]);
     }
-
-
 
     const valuesForValue = {
         cart,

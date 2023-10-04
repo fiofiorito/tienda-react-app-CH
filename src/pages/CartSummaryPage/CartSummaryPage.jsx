@@ -16,10 +16,16 @@ const CartSummaryPage = () => {
         <div className="cart-summ-header">
             <h3 className="cart-summ-page-h3">Resumen de compra</h3>
             <button className="cart-summ-delete-btn" onClick={handleClear}>Borrar todo</button>
-            {console.log(cart)}
         </div>
         {cart.length === 0 && <EmptyCart />}
-        {cart.length > 0 && <CartSummary />}
+        {cart.length > 0 && <>
+            <CartSummary />
+            <div>
+                <p>Total: U$D {
+                    cart.reduce((total, el) => total + (el.item.price * el.quantity), 0)
+                }</p>
+            </div>
+        </>}
 
     </div>
 }

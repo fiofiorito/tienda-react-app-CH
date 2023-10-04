@@ -17,7 +17,7 @@ const CartSummary = () => {
                             <div className='cart-summ-items-div-child-txt'>
                                 <h4 className='cart-summ-items-h4'>{el.item.title}</h4>
                                 <p>Cantidad: {el.quantity}</p>
-                                <p>Total: {el.item.price * el.quantity}</p>
+                                <p>Subtotal: U$D {el.item.price * el.quantity}</p>
                             </div>
                         </div>
                         <button className='cart-summ-delete-btn' onClick={() => { removeItem(el.item.id) }}>Borrar item</button>

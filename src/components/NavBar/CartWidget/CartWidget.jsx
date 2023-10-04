@@ -1,15 +1,25 @@
 // hooks
-import { useState } from "react";
+import { useContext, useState } from "react";
 // components & style
 import { BsCart3 } from "react-icons/bs";
 import './CartWidget.css';
+import CartContext from "../../../context/CartContext/CartContext";
 
 function CartWidget() {
-    const [itemsOnCart, setItemsOnCart] = useState(0);
+    const { cart } = useContext(CartContext);
 
+    const cartLength = cart.length;
+    const checkLength = () => {
+        if (cartLength > 0) {
+            return <span>{cartLength}</span>
+        } else {
+            return <span>0</span>
+        }
+    }
     return <div className="cart-widget">
-        < BsCart3 /> <span>0</span>
-        {/* <p className="items-on-cart">{itemsOnCart}</p> */}
+        < BsCart3 /> <span>{
+            checkLength()
+        }</span>
     </div>
 }
 
