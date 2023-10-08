@@ -26,7 +26,7 @@ const ItemDetail = ({ item, onAdd }) => {
             <div className="detail-p-div">
                 <div>
                     <p className="detail-p">{item.category}</p>
-                    <p className="detail-p">Rate: {item.rating.rate} ⭐</p>
+                    <p className="detail-p">Rate: {item.rate} ⭐</p>
                 </div>
             </div>
             <div className='detail-price-counter'>

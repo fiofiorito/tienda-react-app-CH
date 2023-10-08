@@ -9,16 +9,10 @@ const CategoryPage = () => {
         <div className='category-div-nav'>
             <ul>
                 <li className="nav-bar-item">
-                    <Link className="nav-bar-link" to="/category/men's clothing">Hombres</Link>
+                    <Link className="nav-bar-link" to="/category/cuadernos">Cuadernos</Link>
                 </li>
                 <li className="nav-bar-item">
-                    <Link className="nav-bar-link" to="/category/women's clothing">Mujeres</Link>
-                </li>
-                <li className="nav-bar-item">
-                    <Link className="nav-bar-link" to="/category/jewelery">Joyitas</Link>
-                </li>
-                <li className="nav-bar-item">
-                    <Link className="nav-bar-link" to="/category/electronics">Electrónicos</Link>
+                    <Link className="nav-bar-link" to="/category/marcadores">Marcadores</Link>
                 </li>
             </ul>
         </div>

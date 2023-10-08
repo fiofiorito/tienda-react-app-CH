@@ -1,16 +1,28 @@
 // hooks
 import useFetch from "../../hooks/useFetch";
+import { useContext, useEffect, useState } from "react";
 // components
 import ItemDetail from "./ItemDetail";
 import Loader from "../Loader";
 import CartContext from "../../context/CartContext/CartContext";
 // routing
 import { useParams } from "react-router";
-import { useContext } from "react";
+// firebase
+import { getDoc, doc } from "firebase/firestore";
+import { db } from "../../hooks/useDatabase";
 
 const ItemDetailContainer = () => {
     const { id } = useParams();
-    const [item] = useFetch(`https://fakestoreapi.com/products/${id}`);
+    // const [item] = useFetch(`https://fakestoreapi.com/products/${id}`);
+    const [item, setItem] = useState(null);
+    useEffect(() => {
+        const itemReference = doc(db, "ItemCollection", id);
+        getDoc(itemReference)
+            .then(snapshot => setItem({
+                id: snapshot.id,
+                ...snapshot.data()
+            }))
+    }, [id])
 
     const { addItem } = useContext(CartContext);
     const onAdd = (quantity) => {
