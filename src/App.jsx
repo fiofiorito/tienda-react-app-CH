@@ -8,6 +8,7 @@ import NavBar from './components/NavBar/NavBar';
 import CartContextProvider from './context/CartContext/CartContextProvider';
 import CartSummaryPage from './pages/CartSummaryPage/CartSummaryPage';
 import CategoryPage from './pages/CategoryPage/CategoryPage';
+import HomePage from './pages/HomePage/HomePage';
 import SupportPage from './pages/SupportPage';
 // routing
 import { Route, Routes } from 'react-router';
@@ -22,7 +23,7 @@ function App() {
         <main className='main-section'>
           <div className='container'>
             <Routes>
-              <Route path='/' element={<ItemListContainer />} />
+              <Route path='/' element={<HomePage />} />
               <Route path='/category' element={<CategoryPage />} />
               <Route path='/category/:categoryId' element={<ItemListContainer />} />
               <Route path='/item/:id' element={<ItemDetailContainer />} />
