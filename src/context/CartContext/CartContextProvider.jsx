@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CartContext from "./CartContext";
 
 const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState([])
-
-    console.log("esto es tu", cart)
 
     const addItem = (item, quantity) => {
         const id = item.id
@@ -40,12 +38,17 @@ const CartContextProvider = ({ children }) => {
         setCart([]);
     }
 
+    const totalPrice = () => {
+        return cart.reduce((total, el) => total + (el.item.price * el.quantity), 0)
+    }
+
     const valuesForValue = {
         cart,
         addItem,
         removeItem,
         isInCart,
-        clear
+        clear,
+        totalPrice
     }
 
     return <CartContext.Provider value={valuesForValue}>

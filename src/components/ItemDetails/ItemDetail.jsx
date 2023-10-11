@@ -34,9 +34,8 @@ const ItemDetail = ({ item, onAdd }) => {
                 {
                     quantityAdded > 0 ?
                         <FinishPurchase /> :
-                        <Counter onAdd={onAdd} count={count} setCount={setCount} handleAdd={handleAdd} />
+                        <Counter onAdd={onAdd} count={count} setCount={setCount} handleAdd={handleAdd} stock={item.stock} />
                 }
-
             </div>
         </div>
     </>

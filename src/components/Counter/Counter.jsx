@@ -2,9 +2,7 @@
 import "./Counter.css"
 import AddToCart from "./AddToCart";
 
-const Counter = ({ onAdd, count, setCount, handleAdd }) => {
-    // const [count, setCount] = useState(0)
-    const stock = 50;
+const Counter = ({ onAdd, count, setCount, handleAdd, stock }) => {
 
     const onAddittion = () => {
         if (count === stock) {

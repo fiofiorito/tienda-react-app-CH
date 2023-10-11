@@ -1,3 +1,4 @@
+// components & styles
 import './Error.css'
 import { BiSolidErrorCircle } from 'react-icons/bi';
 

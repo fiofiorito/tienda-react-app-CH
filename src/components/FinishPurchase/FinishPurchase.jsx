@@ -1,4 +1,6 @@
+// routing
 import { Link } from "react-router-dom"
+// styles
 import './FinishPurchase.css'
 
 const FinishPurchase = () => {

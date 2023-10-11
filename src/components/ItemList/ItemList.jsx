@@ -1,5 +1,3 @@
-// hooks
-import { useEffect, useState } from "react";
 // components
 import Items from "./Items";
 

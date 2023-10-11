@@ -1,5 +1,4 @@
 // hooks
-import useFetch from "../../hooks/useFetch";
 import { useContext, useEffect, useState } from "react";
 // components
 import ItemDetail from "./ItemDetail";
@@ -13,7 +12,6 @@ import { db } from "../../hooks/useDatabase";
 
 const ItemDetailContainer = () => {
     const { id } = useParams();
-    // const [item] = useFetch(`https://fakestoreapi.com/products/${id}`);
     const [item, setItem] = useState(null);
     useEffect(() => {
         const itemReference = doc(db, "ItemCollection", id);

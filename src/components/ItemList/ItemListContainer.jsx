@@ -8,6 +8,7 @@ import { useParams } from "react-router";
 // firebase
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from "../../hooks/useDatabase";
+// hooks
 import { useEffect, useState } from "react";
 
 

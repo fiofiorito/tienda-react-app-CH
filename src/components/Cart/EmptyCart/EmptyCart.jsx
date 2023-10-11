@@ -1,4 +1,6 @@
+// routing
 import { Link } from "react-router-dom";
+// components & styles
 import "./EmptyCart.css";
 import { BiSolidErrorCircle } from 'react-icons/bi';
 

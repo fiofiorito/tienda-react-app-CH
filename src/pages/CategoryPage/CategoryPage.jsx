@@ -14,6 +14,12 @@ const CategoryPage = () => {
                 <li className="nav-bar-item">
                     <Link className="nav-bar-link" to="/category/marcadores">Marcadores</Link>
                 </li>
+                <li className="nav-bar-item">
+                    <Link className="nav-bar-link" to="/category/washiTapes">Washi Tapes</Link>
+                </li>
+                <li className="nav-bar-item">
+                    <Link className="nav-bar-link" to="/category/library">Librería</Link>
+                </li>
             </ul>
         </div>
         <ItemListContainer />

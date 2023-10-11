@@ -3,11 +3,14 @@ import { useContext } from 'react';
 // components
 import CartContext from '../../../context/CartContext/CartContext';
 
+
+
+
 const CartSummary = () => {
-    const { cart, removeItem } = useContext(CartContext);
+    const { cart, removeItem, clear } = useContext(CartContext);
+
 
     return <div>
-        {/* <p>No tenes nada en tu cart</p> */}
         <div className="cart-summ-grid-div">
             {
                 cart.map(el => {

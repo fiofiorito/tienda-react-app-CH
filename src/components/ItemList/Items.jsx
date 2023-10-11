@@ -1,5 +1,3 @@
-// Components
-import Counter from "../Counter/Counter";
 // routing
 import { Link } from "react-router-dom";
 
