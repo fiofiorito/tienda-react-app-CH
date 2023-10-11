@@ -23,3 +23,11 @@ function App() {
 }
 
 export default App
+
+
+/* TO DO LIST:
+- user info form for "payment"
+- updateDB para el stock del producto una vez q se hace una compra
+- conseguir hacer la animacion de loading dentro de ItemListContainer de nuevo
+
+*/

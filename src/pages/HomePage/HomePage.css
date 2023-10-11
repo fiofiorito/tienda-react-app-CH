@@ -1,35 +1,90 @@
+.hero-div-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-x: hidden;
+}
+
 .hero-div {
-    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-self: center;
-    border: 1px solid red;
-    margin-bottom: 3rem;
-    overflow: hidden;
+    justify-content: space-between;
 }
 
 .hero-h1 {
-    font-size: 6rem;
+    font-size: 3rem;
+    font-family: 'Merriweather Sans', sans-serif;
     text-align: center;
+    font-weight: 800;
+    text-transform: none;
+    color: #3CC5B1;
+    text-align: center;
+}
+
+.hero-p-div {
+    width: 80%;
+    margin: 0 auto;
 }
 
 .hero-p {
     text-align: center;
-    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 7rem;
 }
 
-.hero-img {
-    height: 25rem;
-    padding: 3rem;
-    transform: rotate(20deg);
+.hero-div-btn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.hero-btn {
+    background-color: transparent;
+    border: none;
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #0D1C1A;
+    text-align: center;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+    background-color: #3CC5B1;
+    color: #F7FCFB;
+}
+
+.hero-div-img {
+    width: 40rem;
+    margin-bottom: 2.5rem;
+
+    /* height: 40rem; */
 }
 
 @media (min-width: 700px) {
     .hero-div {
-        height: 80vh;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        width: 70%;
+        gap: 2rem;
+    }
+
+    .hero-h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-div-img {
+        width: 100%;
+        margin-bottom: 4rem;
+    }
+
+    .hero-p {
+        margin-bottom: 2rem;
+    }
+
+    .hero-div-btn {
+        margin-bottom: 0;
     }
 }

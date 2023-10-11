@@ -1,0 +1,61 @@
+.cart-summ-header {
+    padding-bottom: 2rem;
+}
+
+.cart-summ-page-h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.cart-summ-delete-btn {
+    border: none;
+    background-color: transparent;
+    color: #26CFC6;
+    border-radius: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.cart-summ-pay-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.cart-summ-pay-btn {
+    border: none;
+    background-color: #3BC5B1;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    color: #F1F9F6;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    box-shadow: 0px 3px 10px #B9DFD1;
+}
+
+.cart-summ-pay-btn:hover,
+.cart-summ-pay-btn:focus {
+    background-color: #26CFC6;
+}
+
+
+@media (min-width: 700px) {
+    .cart-summ-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .cart-summ-page-h3 {
+        margin: 0;
+    }
+
+    .cart-summ-pay-div {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

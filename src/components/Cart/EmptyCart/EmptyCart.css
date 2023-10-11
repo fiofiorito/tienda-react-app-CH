@@ -36,6 +36,11 @@
     width: fit-content;
 }
 
+.empty-cart-btn:hover,
+.empty-cart-btn:focus {
+    background-color: #26CFC6;
+}
+
 .empty-cart-btn>a {
     text-decoration: none;
     font-size: 0.9rem;

@@ -2,7 +2,7 @@
 import { useContext } from 'react';
 // components
 import CartContext from '../../../context/CartContext/CartContext';
-
+import './CartSummary.css';
 
 
 

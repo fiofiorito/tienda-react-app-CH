@@ -4,12 +4,26 @@ import './HomePage.css';
 
 const HomePage = () => {
     return <div>
-        <div className='hero-div'>
-            <div>
-                <h1 className='hero-h1'>ACA VA EL HERO</h1>
-                <p className='hero-p'>⬇ Desliza y mira los productos ⬇</p>
+        <div className='hero-div-parent slide-from-bottom'>
+            <div className='hero-div'>
+                <div>
+                    <h1 className='hero-h1'>Los mejores artílos de librería en un solo lugar</h1>
+                    <div className='hero-p-div'>
+                        <p className='hero-p'>Explora una selección excepcional de productos de alta
+                            calidad diseñados para inspirar la creatividad y mejorar la eficiencia
+                            en tu lugar de trabajo.
+                        </p>
+                    </div>
+                    <div className='hero-div-btn'>
+                        <button className='hero-btn'>Conocé los productos</button>
+                    </div>
+                </div>
+
+
             </div>
-            <img src='https://i.pinimg.com/originals/af/e4/86/afe486733b61becbb7e515873ff19544.jpg' alt='aesthetic school supplies' className='hero-img' />
+            <div className='hero-div-img'>
+                <img className='hero-img' src='https://res.cloudinary.com/drhwvqo2m/image/upload/v1697045748/ecommerce/p454gs31p12bwh7iseu7.png' alt='libreria' />
+            </div>
         </div>
         <ItemListContainer />
     </div>

@@ -1,25 +1,24 @@
-// hooks
+// hooks & routing
 import { useContext, useEffect, useState } from "react";
+import { useNavigate } from 'react-router';
 // components & styles
 import CartSummary from "../../components/Cart/CartSummary/CartSummary";
 import '../../components/Cart/CartSummary/CartSummary.css';
+import './CartSummaryPage.css';
 import CartContext from "../../context/CartContext/CartContext";
 import EmptyCart from "../../components/Cart/EmptyCart/EmptyCart";
-
-
-
+import Error from '../../components/Error/Error';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 // firebase
 import { db } from '../../hooks/useDatabase'
 import { addDoc, collection } from 'firebase/firestore';
-import { useNavigate } from 'react-router';
-import Error from '../../components/Error/Error';
-
-
 
 const CartSummaryPage = () => {
     const { clear, cart, totalPrice } = useContext(CartContext);
     const [finalPrice, setFinalPrice] = useState(0);
     const cartLength = cart.length;
+    const sweetAlert = withReactContent(Swal);
 
     const handleClear = () => {
         clear();
@@ -44,19 +43,21 @@ const CartSummaryPage = () => {
         }
         const orderCollection = collection(db, "orderCollection")
         addDoc(orderCollection, order)
-            // ACA EN VEZ DE ALERT, PONER UN SWEET ALERT!!!
             .then(res => {
-                alert("tu orden " + res.id + " se proceso con exito")
+                // CUSTOMIZAR EL CSS
+                sweetAlert.fire({
+                    icon: "success",
+                    title: <p>Su orden fue procesada con éxito!</p>,
+                    text: `Número de orden: ${res.id}`,
+                    confirmButtonText: "Volver a la página principal"
+                })
+                    .then(() => {
+                        clear()
+                        navigate("/")
+                    })
             })
             .catch(err => { err && <Error /> })
 
-        // Cuando haga redireccion al checkout ==> Eliminar el setTimeout()
-        setTimeout(() => {
-            clear()
-            // Hace una redireccion una vez terminada la compra
-            navigate("/")
-
-        }, 3000)
 
         // escribir funcion para updateDoc
 
@@ -70,9 +71,9 @@ const CartSummaryPage = () => {
         {cartLength === 0 && <EmptyCart />}
         {cartLength > 0 && <>
             <CartSummary />
-            <div>
+            <div className="cart-summ-pay-div">
                 <p>Total: U$D {finalPrice}</p>
-                <button onClick={checkout}>Pay</button>
+                <button className="cart-summ-pay-btn" onClick={checkout}>Finalizar compra</button>
             </div>
         </>}
 
