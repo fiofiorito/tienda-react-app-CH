@@ -4,24 +4,24 @@ import { useParams } from 'react-router';
 import './OrderSummary.css';
 // firebase
 import { db } from '../../hooks/useDatabase';
-import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
 const OrderSummary = () => {
-    const orderId = useParams().orderId;
+    const { orderId } = useParams();
+    const [orderData, setOrderData] = useState({});
 
-    // const updateProductStock = () => {
-    //     const orderItemRef = doc(db, "orderCollection", orderId);
-
-
-    //     updateDoc(orderItemRef, { items: [] })
-    //         .then(res => console.log(`${orderId} orden actualizada`))
-    // }
-
+    useEffect(() => {
+        updateProductStock();
+        console.log(orderId)
+    }, [])
     const updateProductStock = () => {
-        const orderItemRef = doc(db, "orderCollection", orderId);
+        const orderItemRef = doc(db, "orderCollection", "iBsfIUaR68mNSfKYIRzb");
+        // debugger
         getDoc(orderItemRef)
             .then(snapshot => {
-                console.log(snapshot.data());
-            })
+                setOrderData(snapshot.data())
+                console.log(orderData.items)
+            });
     }
     return <>
         <h2>Gracias por su compra</h2>

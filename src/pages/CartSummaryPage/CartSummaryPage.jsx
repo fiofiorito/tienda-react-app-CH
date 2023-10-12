@@ -12,10 +12,11 @@ import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 // firebase
 import { db } from '../../hooks/useDatabase'
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, doc, getDoc, updateDoc } from 'firebase/firestore';
 
 const CartSummaryPage = () => {
     const { clear, cart, totalPrice } = useContext(CartContext);
+    const [error, setError] = useState("");
     const [finalPrice, setFinalPrice] = useState(0);
     const cartLength = cart.length;
     const sweetAlert = withReactContent(Swal);
@@ -45,6 +46,13 @@ const CartSummaryPage = () => {
         const orderCollection = collection(db, "orderCollection")
         addDoc(orderCollection, order)
             .then(res => {
+                cart.forEach(product => {
+                    const itemRef = doc(db, "ItemCollection", product.item.id);
+                    getDoc(itemRef)
+                        .then(snapshot => {
+                            updateDoc(itemRef, { stock: snapshot.data().stock - product.quantity })
+                        })
+                });
                 sweetAlert.fire({
                     icon: "success",
                     title: <p>Su orden fue procesada con éxito!</p>,
@@ -56,7 +64,7 @@ const CartSummaryPage = () => {
                         navigate(`/ordersummary/${res.id}`)
                     })
             })
-            .catch(err => { err && <Error /> })
+            .catch(err => setError(err))
     }
 
     return <div>
@@ -72,6 +80,7 @@ const CartSummaryPage = () => {
                 <button className="cart-summ-pay-btn" onClick={checkout}>Finalizar compra</button>
             </div>
         </>}
+        {error && <Error />}
 
     </div>
 }
