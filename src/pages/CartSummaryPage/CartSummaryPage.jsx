@@ -17,8 +17,6 @@ import { addDoc, collection, doc, updateDoc } from 'firebase/firestore';
 const CartSummaryPage = () => {
     const { clear, cart, totalPrice } = useContext(CartContext);
     const [finalPrice, setFinalPrice] = useState(0);
-    const [orderId, setOrderId] = useState("");
-    // const [orderSuccessful, setOrderSuccessful] = useState(false);
     const cartLength = cart.length;
     const sweetAlert = withReactContent(Swal);
 
@@ -47,7 +45,6 @@ const CartSummaryPage = () => {
         const orderCollection = collection(db, "orderCollection")
         addDoc(orderCollection, order)
             .then(res => {
-                setOrderId(res.id)
                 sweetAlert.fire({
                     icon: "success",
                     title: <p>Su orden fue procesada con éxito!</p>,
@@ -56,25 +53,10 @@ const CartSummaryPage = () => {
                 })
                     .then(() => {
                         clear()
-                        navigate("/")
+                        navigate(`/ordersummary/${res.id}`)
                     })
             })
             .catch(err => { err && <Error /> })
-    }
-
-    // escribir funcion para updateDoc
-    const updateProductStock = () => {
-        // console.log(orderSuccessful)
-        const orderItemRef = doc(db, "orderCollection", orderId);
-
-
-        updateDoc(orderItemRef, { total: 3000 })
-            .then(res => console.log(`${orderId} orden actualizada`))
-    }
-
-    const handleCheckout = () => {
-        checkout();
-        updateProductStock();
     }
 
     return <div>
@@ -87,7 +69,7 @@ const CartSummaryPage = () => {
             <CartSummary />
             <div className="cart-summ-pay-div">
                 <p>Total: U$D {finalPrice}</p>
-                <button className="cart-summ-pay-btn" onClick={handleCheckout}>Finalizar compra</button>
+                <button className="cart-summ-pay-btn" onClick={checkout}>Finalizar compra</button>
             </div>
         </>}
 

@@ -6,6 +6,7 @@ import ItemListContainer from "./ItemList/ItemListContainer";
 import ItemDetailContainer from "./ItemDetails/ItemDetailContainer";
 import SupportPage from "../pages/SupportPage/SupportPage";
 import CartSummaryPage from "../pages/CartSummaryPage/CartSummaryPage";
+import OrderSummary from "../pages/OrderSummary/OrderSummary";
 
 const Routing = () => {
     return <Routes>
@@ -15,6 +16,7 @@ const Routing = () => {
         <Route path='/item/:id' element={<ItemDetailContainer />} />
         <Route path='/soporte' element={<SupportPage />} />
         <Route path='/cart' element={<CartSummaryPage />} />
+        <Route path="/ordersummary/:id" element={<OrderSummary />} />
     </Routes>
 }
 
