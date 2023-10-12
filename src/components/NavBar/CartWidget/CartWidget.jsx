@@ -1,5 +1,5 @@
 // hooks
-import { useContext, useState } from "react";
+import { useContext } from "react";
 // components & style
 import { BsCart3 } from "react-icons/bs";
 import './CartWidget.css';
