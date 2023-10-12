@@ -12,11 +12,13 @@ import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 // firebase
 import { db } from '../../hooks/useDatabase'
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, doc, updateDoc } from 'firebase/firestore';
 
 const CartSummaryPage = () => {
     const { clear, cart, totalPrice } = useContext(CartContext);
     const [finalPrice, setFinalPrice] = useState(0);
+    const [orderId, setOrderId] = useState("");
+    // const [orderSuccessful, setOrderSuccessful] = useState(false);
     const cartLength = cart.length;
     const sweetAlert = withReactContent(Swal);
 
@@ -31,6 +33,7 @@ const CartSummaryPage = () => {
     const navigate = useNavigate()
     const checkout = () => {
         const order = {
+            // cambiar buyer por buyen info pasada por un form
             buyer: {
                 id: 1,
                 name: "user" + Math.floor(Math.random() * 1000000),
@@ -44,7 +47,7 @@ const CartSummaryPage = () => {
         const orderCollection = collection(db, "orderCollection")
         addDoc(orderCollection, order)
             .then(res => {
-                // CUSTOMIZAR EL CSS
+                setOrderId(res.id)
                 sweetAlert.fire({
                     icon: "success",
                     title: <p>Su orden fue procesada con éxito!</p>,
@@ -57,10 +60,21 @@ const CartSummaryPage = () => {
                     })
             })
             .catch(err => { err && <Error /> })
+    }
+
+    // escribir funcion para updateDoc
+    const updateProductStock = () => {
+        // console.log(orderSuccessful)
+        const orderItemRef = doc(db, "orderCollection", orderId);
 
 
-        // escribir funcion para updateDoc
+        updateDoc(orderItemRef, { total: 3000 })
+            .then(res => console.log(`${orderId} orden actualizada`))
+    }
 
+    const handleCheckout = () => {
+        checkout();
+        updateProductStock();
     }
 
     return <div>
@@ -73,7 +87,7 @@ const CartSummaryPage = () => {
             <CartSummary />
             <div className="cart-summ-pay-div">
                 <p>Total: U$D {finalPrice}</p>
-                <button className="cart-summ-pay-btn" onClick={checkout}>Finalizar compra</button>
+                <button className="cart-summ-pay-btn" onClick={handleCheckout}>Finalizar compra</button>
             </div>
         </>}
 

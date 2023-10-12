@@ -7,7 +7,7 @@ const HomePage = () => {
         <div className='hero-div-parent slide-from-bottom'>
             <div className='hero-div'>
                 <div>
-                    <h1 className='hero-h1'>Los mejores artílos de librería en un solo lugar</h1>
+                    <h1 className='hero-h1'>Los mejores artículos de librería en un solo lugar</h1>
                     <div className='hero-p-div'>
                         <p className='hero-p'>Explora una selección excepcional de productos de alta
                             calidad diseñados para inspirar la creatividad y mejorar la eficiencia
