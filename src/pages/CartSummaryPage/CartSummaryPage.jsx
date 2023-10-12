@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 // firebase
 import { db } from '../../hooks/useDatabase'
-import { addDoc, collection, doc, updateDoc } from 'firebase/firestore';
+import { addDoc, collection } from 'firebase/firestore';
 
 const CartSummaryPage = () => {
     const { clear, cart, totalPrice } = useContext(CartContext);
