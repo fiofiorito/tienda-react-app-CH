@@ -57,10 +57,10 @@ span.swal2-success-line-tip,
 span.swal2-success-line-long,
 span.swal2-success-ring,
 span.swal2-success-fix {
-    background-color: #26CFC6;
+    background-color: #26CFC6 !important;
+    border-color: #26CFC6 !important;
+    color: #26CFC6 !important;
 }
-
-
 
 div:where(.swal2-icon).swal2-success {
     border-color: #26CFC6 !important;
