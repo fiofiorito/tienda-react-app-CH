@@ -3,6 +3,12 @@ import ItemListContainer from '../../components/ItemList/ItemListContainer';
 import './HomePage.css';
 
 const HomePage = () => {
+    const handleScroll = () => {
+        const element = document.getElementById("products");
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    }
     return <div>
         <div className='hero-div-parent slide-from-bottom'>
             <div className='hero-div'>
@@ -15,17 +21,17 @@ const HomePage = () => {
                         </p>
                     </div>
                     <div className='hero-div-btn'>
-                        <button className='hero-btn'>Conocé los productos</button>
+                        <button className='hero-btn' onClick={handleScroll}>Conocé los productos</button>
                     </div>
                 </div>
-
-
             </div>
             <div className='hero-div-img'>
                 <img className='hero-img' src='https://res.cloudinary.com/drhwvqo2m/image/upload/v1697045748/ecommerce/p454gs31p12bwh7iseu7.png' alt='libreria' />
             </div>
         </div>
-        <ItemListContainer />
+        <div id='products'>
+            <ItemListContainer />
+        </div>
     </div>
 }
 

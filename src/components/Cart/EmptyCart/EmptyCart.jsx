@@ -5,7 +5,7 @@ import "./EmptyCart.css";
 import { BiSolidErrorCircle } from 'react-icons/bi';
 
 const EmptyCart = () => {
-    return <div className="empty-cart-div-parent">
+    return <div className="slide-from-bottom empty-cart-div-parent">
         <div className="empty-cart-div">
             <div className="error-svg">
                 <BiSolidErrorCircle />

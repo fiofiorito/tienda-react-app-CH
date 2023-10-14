@@ -26,9 +26,6 @@ export default App
 
 
 /* TO DO LIST:
-- user info form for "payment"
-- pasarle a la base de datos el user con cada orden realizada
-- updateDB para el stock del producto una vez q se hace una compra
-- conseguir hacer la animacion de loading dentro de ItemListContainer de nuevo
-
+- setear environment variables
+-hacer verificacion del formulario previo a checkout
 */
