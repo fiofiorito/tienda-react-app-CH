@@ -1,4 +1,6 @@
+// hooks
 import { useState } from "react"
+// components
 import BounceLoader from 'react-spinners/BounceLoader';
 
 const Loader = () => {

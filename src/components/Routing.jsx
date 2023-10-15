@@ -1,5 +1,6 @@
 // routing
 import { Route, Routes } from "react-router";
+// components
 import HomePage from "../pages/HomePage/HomePage";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
 import ItemListContainer from "./ItemList/ItemListContainer";

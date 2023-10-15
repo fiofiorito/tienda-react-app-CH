@@ -1,3 +1,4 @@
+// components & styles
 import { BiSupport } from "react-icons/bi";
 import './SupportPage.css';
 

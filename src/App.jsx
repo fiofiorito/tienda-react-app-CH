@@ -27,5 +27,4 @@ export default App
 
 /* TO DO LIST:
 - setear environment variables
--hacer verificacion del formulario previo a checkout
 */

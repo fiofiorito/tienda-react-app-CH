@@ -1,11 +1,8 @@
 // hooks
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 // components
 import CartContext from '../../../context/CartContext/CartContext';
 import './CartSummary.css';
-import Counter from '../../Counter/Counter';
-
-
 
 const CartSummary = () => {
     const { cart, removeItem } = useContext(CartContext);

@@ -6,8 +6,8 @@ import Error from "../Error/Error";
 // routing
 import { useParams } from "react-router";
 // firebase
-import { collection, getDocs, query, where } from 'firebase/firestore';
-import { db } from "../../hooks/useDatabase";
+import { query, where } from 'firebase/firestore';
+import { getCollectionData, getDocuments } from "../../services/firestoreService";
 // hooks
 import { useEffect, useState } from "react";
 
@@ -17,19 +17,9 @@ const ItemListContainer = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        const itemCollection = collection(db, "ItemCollection");
-
+        const itemCollection = getDocuments("ItemCollection")
         const q = categoryId ? query(itemCollection, where("categoryId", "==", categoryId)) : itemCollection;
-        getDocs(q)
-            .then(snapshot => {
-                const data = snapshot.docs.map((document) => (
-                    {
-                        id: document.id,
-                        ...document.data()
-                    }
-                ))
-                setItems(data);
-            })
+        getCollectionData(q).then(data => setItems(data))
     }, [categoryId])
 
     if (items == null) {

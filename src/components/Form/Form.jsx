@@ -1,5 +1,6 @@
-// styles
+// hooks
 import { useState } from 'react';
+// styles
 import './Form.css';
 
 const Form = ({ checkout, name, email, setBuyer, buyer }) => {
@@ -47,14 +48,14 @@ const Form = ({ checkout, name, email, setBuyer, buyer }) => {
                 Tu nombre <span className='required'>*</span>
                 {error.name && <span className='fade-in required-txt'>{error.name}</span>}
             </label>
-            <input className='form-input' onChange={handleChange} type='text' name='name' id='name' value={name} />
+            <input autoComplete='off' className='form-input' onChange={handleChange} type='text' name='name' id='name' value={name} />
         </div>
         <div className='form-div-child'>
             <label className='form-label' htmlFor='email'>
                 Tu email <span className='required'>*</span>
                 {error.email && <span className='fade-in required-txt'>{error.email}</span>}
             </label>
-            <input className='form-input' onChange={handleChange} type='email' name='email' id='email' value={email} />
+            <input autoComplete='off' className='form-input' onChange={handleChange} type='email' name='email' id='email' value={email} />
         </div>
         <button className="cart-summ-pay-btn form-btn" onClick={handleCheckout}>Finalizar compra</button>
     </div>

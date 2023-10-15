@@ -1,9 +1,9 @@
 // components & style
 import Counter from '../Counter/Counter';
 import './ItemDetailContainer.css';
+import FinishPurchase from '../FinishPurchase/FinishPurchase';
 // hooks
 import { useEffect, useState } from 'react';
-import FinishPurchase from '../FinishPurchase/FinishPurchase';
 
 const ItemDetail = ({ item, onAdd }) => {
     const [quantityAdded, setQuantityAdded] = useState(0);

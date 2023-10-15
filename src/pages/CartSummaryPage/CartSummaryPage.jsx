@@ -8,12 +8,12 @@ import './CartSummaryPage.css';
 import CartContext from "../../context/CartContext/CartContext";
 import EmptyCart from "../../components/Cart/EmptyCart/EmptyCart";
 import Error from '../../components/Error/Error';
+import Form from "../../components/Form/Form";
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 // firebase
-import { db } from '../../hooks/useDatabase'
-import { addDoc, collection, doc, getDoc, updateDoc } from 'firebase/firestore';
-import Form from "../../components/Form/Form";
+import { getDocument, getDocuments } from '../../services/firestoreService'
+import { addDoc, getDoc, updateDoc } from 'firebase/firestore';
 
 const CartSummaryPage = () => {
     const { clear, cart, totalPrice } = useContext(CartContext);
@@ -22,8 +22,7 @@ const CartSummaryPage = () => {
     const [buyer, setBuyer] = useState({ name: "", email: "" })
     const cartLength = cart.length;
     const sweetAlert = withReactContent(Swal);
-
-
+    const navigate = useNavigate()
 
     const handleClear = () => {
         clear();
@@ -33,7 +32,6 @@ const CartSummaryPage = () => {
         setFinalPrice(totalPrice)
     }, [cartLength])
 
-    const navigate = useNavigate()
     const checkout = () => {
         const order = {
             buyer,
@@ -41,11 +39,11 @@ const CartSummaryPage = () => {
             date: new Date(),
             total: finalPrice
         }
-        const orderCollection = collection(db, "orderCollection")
+        const orderCollection = getDocuments("orderCollection")
         addDoc(orderCollection, order)
             .then(res => {
                 cart.forEach(product => {
-                    const itemRef = doc(db, "ItemCollection", product.item.id);
+                    const itemRef = getDocument("ItemCollection", product.item.id);
                     getDoc(itemRef)
                         .then(snapshot => {
                             updateDoc(itemRef, { stock: snapshot.data().stock - product.quantity })
@@ -63,7 +61,7 @@ const CartSummaryPage = () => {
                     })
             })
             .catch(err => setError(err))
-    }
+    };
 
     return <div className="cart-summ-grid slide-from-bottom">
         <div className="cart-summ-header">

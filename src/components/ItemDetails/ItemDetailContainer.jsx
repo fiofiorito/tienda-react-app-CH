@@ -7,19 +7,15 @@ import CartContext from "../../context/CartContext/CartContext";
 // routing
 import { useParams } from "react-router";
 // firebase
-import { getDoc, doc } from "firebase/firestore";
-import { db } from "../../hooks/useDatabase";
+import { getDocument, getDocumentData } from "../../services/firestoreService";
 
 const ItemDetailContainer = () => {
     const { id } = useParams();
     const [item, setItem] = useState(null);
     useEffect(() => {
-        const itemReference = doc(db, "ItemCollection", id);
-        getDoc(itemReference)
-            .then(snapshot => setItem({
-                id: snapshot.id,
-                ...snapshot.data()
-            }))
+        const itemRef = getDocument("ItemCollection", id)
+        getDocumentData(itemRef)
+            .then(data => setItem(data))
     }, [id])
 
     const { addItem } = useContext(CartContext);
