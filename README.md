@@ -3,8 +3,7 @@ ___
 
 [ES] Este proyecto es una aplicación web creada como parte de un trabajo práctico estudiantil que desarrollé a lo largo de mi curso de React JS en Coderhouse. Durante la elaboración de este proyecto, el profesor y los tutores a cargo de mi comisión se encargaron de proporcionarnos las consignas, y yo procedí a construirla de acuerdo a las instrucciones proporcionadas.
 
-👇 👇 👇
-[Enlace a la página web](https://main--ifio-library-ecommerce.netlify.app/)
+👉 👉 👉 [Enlace a la página web](https://main--ifio-library-ecommerce.netlify.app/)
 
 ### Funcionamiento
 ![](https://github.com/fiofiorito/tienda-react-app-CH/blob/main/public/ecommerce-webapp-demo.gif)
@@ -42,8 +41,7 @@ ___
 ___
 [EN] This project is a web app that I developed as a final assignment for the React JS course at Coderhouse. Throughout the entire project, both the professor and the tutors in my group were responsible for providing my classmates and me with the assignment instructions. I proceeded to build it accordingly.
 
-👇 👇 👇
-[Link to the webpage](https://main--ifio-library-ecommerce.netlify.app/)
+👉 👉 👉 [Link to the webpage](https://main--ifio-library-ecommerce.netlify.app/)
 
 ### Functionality 
 ![](https://github.com/fiofiorito/tienda-react-app-CH/blob/main/public/ecommerce-webapp-demo.gif)
