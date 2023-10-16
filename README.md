@@ -2,3 +2,14 @@
 Segunda entrega: gif demostrando las rutas :&#41;
 
 ![](https://github.com/fiofiorito/tienda-react-app-CH/blob/main/public/2da-entrega-gif.gif)
+
+
+DESCRIBIR LA APP:
+
+ESTE PYECTO ES UN PROYECTO ESTUDIANTIL
+
+- DESCRIPCION
+- TECNOLOGIAS
+- Q ES LO Q HACE
+- TIPO DE ECOMMERCE
+- GIF 

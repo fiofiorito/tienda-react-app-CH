@@ -1,14 +1,15 @@
 // Firebase
 import { initializeApp } from "firebase/app";
 import { collection, getDocs, getFirestore, doc, getDoc } from "firebase/firestore";
+// import 'dotenv/config';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDUGANc8RdVHFZe-VK333YZppWKJLeDAh0",
-    authDomain: "tienda-react-ifio.firebaseapp.com",
-    projectId: "tienda-react-ifio",
-    storageBucket: "tienda-react-ifio.appspot.com",
-    messagingSenderId: "932913288055",
-    appId: "1:932913288055:web:48795e6cef7d2b58a90772"
+    apiKey: import.meta.env.VITE_API_KEY,
+    authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_PROYECT_ID,
+    storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_API_ID
 };
 
 const app = initializeApp(firebaseConfig);
