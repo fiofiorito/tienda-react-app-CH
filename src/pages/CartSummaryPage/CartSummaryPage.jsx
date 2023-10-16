@@ -8,7 +8,7 @@ import './CartSummaryPage.css';
 import CartContext from "../../context/CartContext/CartContext";
 import EmptyCart from "../../components/Cart/EmptyCart/EmptyCart";
 import Error from '../../components/Error/Error';
-import Form from "../../components/Form/Form";
+import FormContainer from "../../components/Form/FormContainer";
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 // firebase
@@ -19,10 +19,10 @@ const CartSummaryPage = () => {
     const { clear, cart, totalPrice } = useContext(CartContext);
     const [error, setError] = useState("");
     const [finalPrice, setFinalPrice] = useState(0);
-    const [buyer, setBuyer] = useState({ name: "", email: "" })
     const cartLength = cart.length;
     const sweetAlert = withReactContent(Swal);
     const navigate = useNavigate()
+    const [buyer, setBuyer] = useState({ nombre: "", email: "", teléfono: "", ciudad: "" })
 
     const handleClear = () => {
         clear();
@@ -78,7 +78,7 @@ const CartSummaryPage = () => {
             </div>
             <div className="cart-summ-pay-div">
                 <p className="p-bold">Total: U$D {finalPrice}</p>
-                <Form name={buyer.name} email={buyer.email} buyer={buyer} setBuyer={setBuyer} checkout={checkout} />
+                <FormContainer buyer={buyer} setBuyer={setBuyer} checkout={checkout} />
                 {/* <button className="cart-summ-pay-btn" onClick={checkout}>Finalizar compra</button> */}
             </div>
         </>}

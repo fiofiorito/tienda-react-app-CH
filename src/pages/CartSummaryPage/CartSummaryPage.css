@@ -112,7 +112,7 @@ button.swal2-confirm.swal2-styled {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 2rem;
-        grid-template-rows: min-content;
+        grid-template-rows: 10% 80% 10%;
         align-items: flex-start;
     }
 
@@ -122,7 +122,7 @@ button.swal2-confirm.swal2-styled {
     }
 
     .cart-summ-items {
-        grid-area: 2 / 1 / 3 / 3;
+        grid-area: 2 / 1 / 4 / 3;
     }
 
     .cart-summ-pay-div {
@@ -133,6 +133,7 @@ button.swal2-confirm.swal2-styled {
 
     .empty-cart-div-parent {
         grid-area: 2 / 1 / 3 / 3;
+        padding-top: 2.5rem;
     }
 
     .empty-cart-img {

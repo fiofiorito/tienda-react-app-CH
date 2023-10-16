@@ -27,4 +27,5 @@ export default App
 
 /* TO DO LIST:
 - setear environment variables
+- optimizar form data // 1:10:00
 */
